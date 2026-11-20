@@ -18,11 +18,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Lodestar
+title: Misericorde
 description: Whitehack 4 Rules.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://whitehack.lodestar.quest"
-repository: ambynavy/lodestar.quest
+url: "https://misericorde.amby.navy"
+repository: ambynavy/misericorde
 
 permalink: pretty
 
