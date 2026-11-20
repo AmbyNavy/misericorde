@@ -1,0 +1,80 @@
+// stock styling
+
+h1, h2, h3, h4, h5, h6, .site-title, .nav-list .nav-list-item .nav-list-link {
+  font-family: $heading-font-family;
+}
+
+.main-content table.compact-table {
+  width: 100%;
+  min-width: 0;
+  table-layout: auto;
+}
+
+// content sized table, for those exceptionally small fuckers. cuts em down to size innit
+
+.main-content table.content-sized-table {
+  width: max-content;
+  max-width: 100%;
+  min-width: 0;
+  table-layout: auto;
+}
+
+// fuckin wrapper's annoying, fix that cunt
+
+.main-content .table-wrapper:has(> table.content-sized-table) {
+  width: max-content;
+  max-width: 100%;
+}
+
+// this makes every table I put compact-table onto have tighter wrapping rules
+
+.main-content table.compact-table th,
+.main-content table.compact-table td {
+  min-width: min-content;
+  padding: 0.25rem 0.65rem;
+  white-space: normal;
+  overflow-wrap: normal;
+}
+
+// this is for the monster stats page to make everything but the last column wrap
+
+.main-content table.range-table th:not(:last-child),
+.main-content table.range-table td:not(:last-child) {
+  white-space: nowrap;
+}
+
+// keep odd-numbered key columns narrow and share the remaining width across even columns
+
+.main-content table.even-columns-table {
+  table-layout: fixed;
+}
+
+.main-content table.even-columns-table th:nth-child(odd),
+.main-content table.even-columns-table td:nth-child(odd) {
+  width: 3rem;
+  white-space: nowrap;
+}
+
+.main-content table.even-columns-table th:nth-child(even),
+.main-content table.even-columns-table td:nth-child(even) {
+  width: auto;
+}
+
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: $white;
+}
+
+.side-bar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+@media (min-width: 50rem) {
+  .side-bar {
+    position: fixed;
+  }
+}
